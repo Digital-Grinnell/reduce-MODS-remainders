@@ -16,8 +16,10 @@ This table is intended to record progress as collections are processed.
 | faculty-scholarship | 2021-Dec-8 | Complete |
 | grinnell-in-china | 2021-Dec-8 | Complete.  Needs review.  See 17439 |
 | gwcc | 2021-Dec-8 | Complete |
-| kleinschmidt | TBD | Script complete |
-| phpp-community | TBD | Script complete |
+| kleinschmidt | 2021-Dec-9 | Complete |
+| phpp-community | 2021-Dec-9 | Complete |
+
+*Note that `Complete` in the above table means that the script was run, and generated `iduF-AddXML-*.cmd` files were reviewed, edited, and run against the target collection.  **Some review of these collections may still be prudent!** 
 
 ## Duplicate MODS Elements
 
