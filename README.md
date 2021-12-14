@@ -1,8 +1,29 @@
+# reduce-MODS-remainders
+
+This repository and the `main.py` script should be used to analyze and remediate "remainders", elements of old MODS metadata records that were not recognized during the _Digital.Grinnell_ metadata review process conducted in 2020-2021. 
+
+The `main.py` script can be easily configured and run from _PyCharm_ using an input parameter of the form: `/Volumes/DG-Metadata-Review-2020-r1/<collection-PID>`.  Note that parameters of this form are only valid if the desktop computer hosting this repository has `//Storage/Library/AllStaff/DG-Metadata-Review-2020-r1` mounted as `/Volumnes/DG-Metadata-Review-2020-r1`. 
+
+The script will generate several pieces of output into the corresponding `/Volumes/DG-Metadata-Review-2020-r1/<collection-PID>` directory.  The most important are command shell files named `iduF-AddXML-*.cmd`, where `*` can be:
+
+  - `note`, 
+  - `private`, 
+  - `relatedItem`, 
+  - `abstract`, or 
+  - `originInfo`. 
+
+Each of the generated `iduF-AddXML-*.cmd` command files will contain a series of `iduF AddXML` commands designed to re-populate "remainder" elements back into objects' MODS records.  Each such file should be reviewed and, if acceptable, processed using a command stream like:
+
+```markdown
+cd /var/www/html/sites/default
+source /mnt/metadata-review/<collection-PID>/iduF-AddXML-<type>.cmd
+```
+
 # Change History
 
 ## Collection Processing
 
-This table is intended to record progress as collections are processed.  
+This table is intended to record progress as collections are processed using the `main.py` script found in this repository.  See [Exporting, Editing & Replacing MODS Datastreams: Technical Details](https://static.grinnell.edu/dlad-blog/posts/070-exporting-editing-replacing-mods-datastreams-technical-details/) for details.  
 
 | Collection | Date | Status |
 | --- | --- | --- |
@@ -18,6 +39,7 @@ This table is intended to record progress as collections are processed.
 | gwcc | 2021-Dec-8 | Complete |
 | kleinschmidt | 2021-Dec-9 | Complete |
 | phpp-community | 2021-Dec-9 | Complete |
+| phpp-ghm | 2021-Dec-14 | Complete |
 
 *Note that `Complete` in the above table means that the script was run, and generated `iduF-AddXML-*.cmd` files were reviewed, edited, and run against the target collection.  **Some review of these collections may still be prudent!** 
 
